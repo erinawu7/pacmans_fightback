@@ -1,0 +1,47 @@
+class Next2 {
+
+    function void show() {
+        var int i, j, k;
+        var char key;
+        let key = Keyboard.keyPressed();
+        do Output.moveCursor(0, 0);
+        let i = 0;
+        while (i < 9) {
+            do Output.println();
+            let i = i + 1;
+        }
+        let k = 0;
+        while (k < 23) {
+            do Output.printString(" ");
+            let k = k + 1;
+        }
+        do Output.printString("you won level 2");
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        let k = 0;
+        while (k < 19) {
+            do Output.printString(" ");
+            let k = k + 1;
+        }
+        while (~(key = 128)){
+            do Output.printString("press enter to continue");
+            do Sys.wait(300);
+            let key = Keyboard.keyPressed();
+            let j = 0;
+            while (j < 23) {
+                do Output.backSpace();
+                let j = j + 1;
+            }
+            do Sys.wait(300);
+            let key = Keyboard.keyPressed();
+
+        }
+        return;
+    }
+
+    function void next() {
+        do Screen.clearScreen();
+        return;
+    }
+}

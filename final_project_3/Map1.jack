@@ -1,0 +1,154 @@
+class Map1 {
+   
+   static Array map1x;
+   static Array map1y;
+
+   function void draw() {
+      let map1x = Array.new(128);
+      let map1y = Array.new(128);
+      let map1x[0] = 0; let map1y[0] = 0;
+      let map1x[1] = 0; let map1y[1] = 32;
+      let map1x[2] = 0; let map1y[2] = 64;
+      let map1x[3] = 0; let map1y[3] = 128;
+      let map1x[4] = 0; let map1y[4] = 160;
+      let map1x[5] = 0; let map1y[5] = 224;
+      let map1x[6] = 64; let map1y[6] = 0;
+      let map1x[7] = 64; let map1y[7] = 64;
+      let map1x[8] = 64; let map1y[8] = 128;
+      let map1x[9] = 64; let map1y[9] = 160;
+      let map1x[10] = 64; let map1y[10] = 224;
+      let map1x[11] = 96; let map1y[11] = 0;
+      let map1x[12] = 96; let map1y[12] = 64;
+      let map1x[13] = 96; let map1y[13] = 128;
+      let map1x[14] = 96; let map1y[14] = 160;
+      let map1x[15] = 96; let map1y[15] = 224;
+      let map1x[16] = 128; let map1y[16] = 0;
+      let map1x[17] = 128; let map1y[17] = 224;
+      let map1x[18] = 160; let map1y[18] = 0;
+      let map1x[19] = 160; let map1y[19] = 64;
+      let map1x[20] = 160; let map1y[20] = 96;
+      let map1x[21] = 160; let map1y[21] = 128;
+      let map1x[22] = 160; let map1y[22] = 192;
+      let map1x[23] = 160; let map1y[23] = 224;
+      let map1x[24] = 224; let map1y[24] = 0;
+      let map1x[25] = 224; let map1y[25] = 32;
+      let map1x[26] = 224; let map1y[26] = 96;
+      let map1x[27] = 224; let map1y[27] = 160;
+      let map1x[28] = 224; let map1y[28] = 224;
+      let map1x[29] = 256; let map1y[29] = 0;
+      let map1x[30] = 256; let map1y[30] = 96;
+      let map1x[31] = 256; let map1y[31] = 160;
+      let map1x[32] = 256; let map1y[32] = 224;
+      let map1x[33] = 288; let map1y[33] = 0;
+      let map1x[34] = 288; let map1y[34] = 64;
+      let map1x[35] = 288; let map1y[35] = 96;
+      let map1x[36] = 288; let map1y[36] = 160;
+      let map1x[37] = 288; let map1y[37] = 224;
+      let map1x[38] = 320; let map1y[38] = 0;
+      let map1x[39] = 320; let map1y[39] = 224;
+      let map1x[40] = 352; let map1y[40] = 0;
+      let map1x[41] = 352; let map1y[41] = 32;
+      let map1x[42] = 352; let map1y[42] = 64;
+      let map1x[43] = 352; let map1y[43] = 128;
+      let map1x[44] = 352; let map1y[44] = 160;
+      let map1x[45] = 352; let map1y[45] = 224;
+      let map1x[46] = 384; let map1y[46] = 0;
+      let map1x[47] = 384; let map1y[47] = 224;
+      let map1x[48] = 416; let map1y[48] = 0;
+      let map1x[49] = 416; let map1y[49] = 64;
+      let map1x[50] = 416; let map1y[50] = 96;
+      let map1x[51] = 416; let map1y[51] = 160;
+      let map1x[52] = 416; let map1y[52] = 224;
+      let map1x[53] = 448; let map1y[53] = 0;
+      let map1x[54] = 448; let map1y[54] = 224;
+      let map1x[55] = 480; let map1y[55] = 0;
+      let map1x[56] = 480; let map1y[56] = 32;
+      let map1x[57] = 480; let map1y[57] = 64;
+      let map1x[58] = 480; let map1y[58] = 128;
+      let map1x[59] = 480; let map1y[59] = 160;
+      let map1x[60] = 480; let map1y[60] = 224;
+      do Screen.setColor(true);
+      do Screen.drawRectangle(0, 0, 31, 95);
+      do Screen.drawRectangle(0, 128, 31, 191);
+      do Screen.drawRectangle(0, 224, 31, 255);
+      do Screen.drawRectangle(64, 0, 191, 31);
+      do Screen.drawRectangle(64, 64, 127, 95);
+      do Screen.drawRectangle(64, 128, 127, 191);
+      do Screen.drawRectangle(64, 224, 191, 255);
+      do Screen.drawRectangle(160, 64, 191, 159);
+      do Screen.drawRectangle(160, 192, 191, 223);
+      do Screen.drawRectangle(224, 0, 255, 63);
+      do Screen.drawRectangle(224, 96, 319, 127);
+      do Screen.drawRectangle(224, 160, 319, 191);
+      do Screen.drawRectangle(224, 224, 511, 255);
+      do Screen.drawRectangle(256, 0, 511, 31);
+      do Screen.drawRectangle(288, 64, 319, 95);
+      do Screen.drawRectangle(352, 32, 383, 95);
+      do Screen.drawRectangle(352, 128, 383, 191);
+      do Screen.drawRectangle(416, 64, 447, 127);
+      do Screen.drawRectangle(416, 160, 447, 191);
+      do Screen.drawRectangle(480, 32, 511, 95);
+      do Screen.drawRectangle(480, 128, 511, 191);
+      return;
+   }
+
+   function void end() {
+      do Screen.clearScreen();
+      return;
+   }
+
+   function boolean check(int px, int py, int DIR) {
+       var int x;
+       var int y;
+       var int dir;
+       var int i;
+       let i = 0;
+       let x = px;
+       let y = py;
+       let dir = DIR;
+       while (i < 61) {
+           if (dir = 1) {
+                if ((y - 32) = map1y[i]) {
+                    if (x = map1x[i]) {
+                        return true;
+                    }
+                    if ((x - 16) = map1x[i]) {
+                        return true;
+                    }
+                }
+           }
+           if (dir = 2) {
+                if ((y + 16) = map1y[i]) {
+                    if (x = map1x[i]) {
+                        return true;
+                    }
+                    if ((x - 16) = map1x[i]) {
+                        return true;
+                    }
+                }
+           }
+           if (dir = 3) {
+               if ((x - 32) = map1x[i]) {
+                   if (y = map1y[i]) {
+                       return true;
+                   }
+                   if ((y - 16) = map1y[i]) {
+                       return true;
+                   }
+               }
+           }
+           if (dir = 4) {
+               if ((x + 16) = map1x[i]) {
+                   if (y = map1y[i]) {
+                       return true;
+                   }
+                   if ((y - 16) = map1y[i]) {
+                       return true;
+                   }
+               }
+           }
+           let i = i + 1;
+       }
+       return false;
+   }
+}

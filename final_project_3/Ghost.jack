@@ -1,0 +1,192 @@
+class Ghost{
+
+   field int x, y;
+   field int s;
+
+   constructor Ghost new(int Ax, int Ay, int stage) {
+      let x = Ax;
+      let y = Ay;
+      let s = stage;
+      do draw();
+      return this;
+   }
+
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+   method void draw() {
+      do Screen.setColor(true);
+      do Screen.drawLine(x+4,y+1,x+11,y+1);
+      do Screen.drawLine(x+3,y+2,x+12,y+2);
+      do Screen.drawLine(x+2,y+3,x+13,y+3);
+      do Screen.drawLine(x+1,y+4,x+13,y+4);
+      do Screen.drawLine(x+1,y+5,x+3,y+5);do Screen.drawLine(x+6,y+5,x+8,y+5);do Screen.drawLine(x+11,y+5,x+13,y+5);
+      do Screen.drawLine(x+1,y+6,x+4,y+6);do Screen.drawLine(x+6,y+6,x+9,y+6);do Screen.drawLine(x+11,y+6,x+13,y+6);
+      do Screen.drawLine(x+1,y+7,x+3,y+7);do Screen.drawLine(x+6,y+7,x+8,y+7);do Screen.drawLine(x+11,y+7,x+13,y+7);
+      do Screen.drawLine(x+1,y+8,x+13,y+8);
+      do Screen.drawLine(x+1,y+9,x+13,y+9);
+      do Screen.drawLine(x+1,y+10,x+13,y+10);
+      do Screen.drawLine(x+1,y+11,x+13,y+11);
+      do Screen.drawLine(x+1,y+12,x+3,y+12);do Screen.drawLine(x+6,y+12,x+8,y+12);do Screen.drawLine(x+10,y+12,x+12,y+12);
+      do Screen.drawLine(x+1,y+13,x+1,y+13);do Screen.drawLine(x+7,y+13,x+7,y+13);do Screen.drawLine(x+11,y+13,x+11,y+13);
+      return;
+   }
+   
+   method void erase() {
+      do Screen.setColor(false);
+      do Screen.drawRectangle(x, y, x + 15, y + 15);
+      return;
+   }
+
+   method int getghostx() {
+      return x;
+   }
+
+   method int getghosty() {
+      return y;
+   }
+
+   method void move(int num) {
+      var int index;
+      let index = num;
+      if (index = 1) {
+         do moveup();
+      }
+      if (index = 2) {
+         do movedown();
+      }
+      if (index = 3) {
+         do moveleft();
+      }
+      if (index = 4) {
+         do moveright();
+      }
+      return;
+   }
+
+   method void moveup() {
+      if(s = 1) {
+         if (Map1.check(x, y, 1)) {
+            return;
+         }
+      }
+      if(s = 2) {
+         if (Map2.check(x, y, 1)) {
+            return;
+         }
+      }
+      if(s = 3) {
+         if (Map3.check(x, y, 1)) {
+            return;
+         }
+      }
+      if (y = 0) {
+         do erase();
+         let y = 240;
+         do draw();
+      }
+      else {
+         if (~(y < 16)) {
+            do erase();
+            let y = y - 16;
+            do draw();
+         }
+      }
+      return;
+   }
+
+   method void movedown() {
+      if(s = 1) {
+         if (Map1.check(x, y, 2)) {
+            return;
+         }
+      }
+      if(s = 2) {
+         if (Map2.check(x, y, 2)) {
+            return;
+         }
+      }
+      if(s = 3) {
+         if (Map3.check(x, y, 2)) {
+            return;
+         }
+      }
+      if (y < 240) {
+         do erase();
+         let y = y + 16;
+         do draw();
+      }
+      else {
+         if (y = 240) {
+            do erase();
+            let y = 0;
+            do draw();
+         }
+      }
+      return;
+   }
+
+   method void moveleft() {
+      if(s = 1) {
+         if (Map1.check(x, y, 3)) {
+            return;
+         }
+      }
+      if(s = 2) {
+         if (Map2.check(x, y, 3)) {
+            return;
+         }
+      }
+      if(s = 3) {
+         if (Map3.check(x, y, 3)) {
+            return;
+         }
+      }
+      if (x = 0) {
+         do erase();
+         let x = 496;
+         do draw();
+      }
+      else {
+         if (x > 0) {
+            do erase();
+            let x = x - 16;
+            do draw();
+         }
+      }
+      return;
+   }
+
+   method void moveright() {
+      if(s = 1) {
+         if (Map1.check(x, y, 4)) {
+            return;
+         }
+      }
+      if(s = 2) {
+         if (Map2.check(x, y, 4)) {
+            return;
+         }
+      }
+      if(s = 3) {
+         if (Map3.check(x, y, 4)) {
+            return;
+         }
+      }
+      if (x = 496){
+         do erase();
+         let x = 0;
+         do draw();
+      }
+      else {
+         if (x < 496) {  
+            do erase();
+            let x = x + 16;
+            do draw();
+         }
+      }
+      return;
+   }
+}

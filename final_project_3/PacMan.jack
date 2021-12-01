@@ -1,0 +1,273 @@
+class PacMan {
+
+   field int x, y;
+   field int address;
+   field int direc;
+   field int face;
+   field int s;
+   field int count;
+   field boolean one, two, three, four, five;
+   field int gx, gy;
+
+   constructor PacMan new(int Ax, int Ay, int stage) {
+      let x = Ax;
+      let y = Ay;
+      let gx = 0;
+      let gy = 0;
+      let s = stage;
+      let count = 5;
+      let one = true;
+      let two = true;
+      let three = true;
+      let four = true;
+      let five = true;
+      let face = 0;
+      do draw();
+      return this;
+   }
+
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+   method void draw() {
+      do Screen.setColor(true);
+      if(face = 0){
+         do Screen.drawLine(x+6,y+0,x+11,y+0);
+         do Screen.drawLine(x+4,y+1,x+13,y+1);
+         do Screen.drawLine(x+2,y+2,x+14,y+2);
+         do Screen.drawLine(x+1,y+3,x+7,y+3);do Screen.drawLine(x+10,y+3,x+15,y+3);
+         do Screen.drawLine(x+1,y+4,x+14,y+4);
+         do Screen.drawLine(x+0,y+5,x+12,y+5);
+         do Screen.drawLine(x+0,y+6,x+10,y+6);
+         do Screen.drawLine(x+0,y+7,x+9,y+7);
+         do Screen.drawLine(x+0,y+8,x+8,y+8);
+         do Screen.drawLine(x+0,y+9,x+10,y+9);
+         do Screen.drawLine(x+1,y+10,x+13,y+10);
+         do Screen.drawLine(x+1,y+11,x+15,y+11);
+         do Screen.drawLine(x+3,y+12,x+14,y+12);
+         do Screen.drawLine(x+3,y+13,x+12,y+13);
+         do Screen.drawLine(x+5,y+14,x+11,y+14);
+      }
+      if(face = 1){
+         do Screen.drawLine(x+4,y+0,x+9,y+0);
+         do Screen.drawLine(x+2,y+1,x+11,y+1);
+         do Screen.drawLine(x+1,y+2,x+13,y+2);
+         do Screen.drawLine(x+0,y+3,x+6,y+3);do Screen.drawLine(x+9,y+3,x+14,y+3);
+         do Screen.drawLine(x+1,y+4,x+14,y+4);
+         do Screen.drawLine(x+3,y+5,x+15,y+5);
+         do Screen.drawLine(x+5,y+6,x+15,y+6);
+         do Screen.drawLine(x+6,y+7,x+15,y+7);
+         do Screen.drawLine(x+7,y+8,x+15,y+8);
+         do Screen.drawLine(x+5,y+9,x+15,y+9);
+         do Screen.drawLine(x+2,y+10,x+14,y+10);
+         do Screen.drawLine(x+0,y+11,x+14,y+11);
+         do Screen.drawLine(x+1,y+12,x+12,y+12);
+         do Screen.drawLine(x+3,y+13,x+12,y+13);
+         do Screen.drawLine(x+4,y+14,x+10,y+14);
+      }
+      if(face = 2){
+         do Screen.drawLine(x+5,y+0,x+9,y+0);
+         do Screen.drawLine(x+3,y+1,x+11,y+1);
+         do Screen.drawLine(x+2,y+2,x+11,y+2);
+         do Screen.drawLine(x+2,y+3,x+13,y+3);
+         do Screen.drawLine(x+1,y+4,x+13,y+4);
+         do Screen.drawLine(x+1,y+5,x+14,y+5);
+         do Screen.drawLine(x+0,y+6,x+14,y+6);
+         do Screen.drawLine(x+0,y+7,x+14,y+7);
+         do Screen.drawLine(x+0,y+8,x+14,y+8);
+         do Screen.drawLine(x+0,y+9,x+2,y+9);do Screen.drawLine(x+4,y+9,x+14,y+9);
+         do Screen.drawLine(x+0,y+10,x+2,y+10);do Screen.drawLine(x+4,y+10,x+7,y+10);do Screen.drawLine(x+9,y+10,x+14,y+10);
+         do Screen.drawLine(x+0,y+11,x+6,y+11);do Screen.drawLine(x+9,y+11,x+14,y+11);
+         do Screen.drawLine(x+1,y+12,x+5,y+12);do Screen.drawLine(x+10,y+12,x+13,y+12);
+         do Screen.drawLine(x+1,y+13,x+4,y+13);do Screen.drawLine(x+10,y+13,x+12,y+13);
+         do Screen.drawLine(x+2,y+14,x+4,y+14);do Screen.drawLine(x+11,y+14,x+12,y+14);
+         do Screen.drawLine(x+3,y+15,x+3,y+15);do Screen.drawLine(x+11,y+15,x+11,y+15);
+      }
+      if(face = 3){
+         do Screen.drawLine(x+4,y+0,x+4,y+0);do Screen.drawLine(x+12,y+0,x+12,y+0);
+         do Screen.drawLine(x+3,y+1,x+4,y+1);do Screen.drawLine(x+11,y+1,x+13,y+1);
+         do Screen.drawLine(x+3,y+2,x+5,y+2);do Screen.drawLine(x+11,y+2,x+14,y+2);
+         do Screen.drawLine(x+2,y+3,x+5,y+3);do Screen.drawLine(x+10,y+3,x+14,y+3);
+         do Screen.drawLine(x+1,y+4,x+5,y+4);do Screen.drawLine(x+10,y+4,x+15,y+4);
+         do Screen.drawLine(x+1,y+5,x+6,y+5);do Screen.drawLine(x+9,y+5,x+15,y+5);
+         do Screen.drawLine(x+0,y+6,x+6,y+6);do Screen.drawLine(x+8,y+6,x+11,y+6);do Screen.drawLine(x+13,y+6,x+15,y+6);
+         do Screen.drawLine(x+0,y+7,x+11,y+7);do Screen.drawLine(x+13,y+7,x+15,y+7);
+         do Screen.drawLine(x+0,y+8,x+15,y+8);
+         do Screen.drawLine(x+0,y+9,x+15,y+9);
+         do Screen.drawLine(x+0,y+10,x+14,y+10);
+         do Screen.drawLine(x+1,y+11,x+14,y+11);
+         do Screen.drawLine(x+2,y+12,x+13,y+12);
+         do Screen.drawLine(x+4,y+13,x+13,y+13);
+         do Screen.drawLine(x+4,y+14,x+12,y+14);
+         do Screen.drawLine(x+6,y+15,x+10,y+15);
+      }
+      return;
+   }
+
+   method void erase() {
+      do Screen.setColor(false);
+      do Screen.drawRectangle(x, y, x + 15, y + 15);
+      return;
+   }
+
+   method boolean moveghost(int index) {
+      if (index = 1) {
+         return one;
+      }
+      if (index = 2) {
+         return two;
+      }
+      if (index = 3) {
+         return three;
+      }
+      if (index = 4) {
+         return four;
+      }
+      if (index = 5) {
+         return five;
+      }
+      return true;
+   }
+
+   method int getpacmanx() {
+      return x;
+   }
+
+   method int getpacmany() {
+      return y;
+   }
+
+   method void moveUp(int Directio) {
+      let face = 3;
+      let direc = Directio;
+      if(s = 1) {
+         if (Map1.check(x, y, direc)) {
+            return;
+         }
+      }
+      if(s = 2) {
+         if (Map2.check(x, y, direc)) {
+            return;
+         }
+      }
+      if(s = 3) {
+         if (Map3.check(x, y, direc)) {
+            return;
+         }
+      }
+      if (y = 0) {
+         do erase();
+         let y = 240;
+         do draw();
+      }
+      else {
+         if (~(y < 16)) {
+            do erase();
+            let y = y - 16;
+            do draw();
+         }
+      }
+      return;
+   }
+
+   method void moveDown(int Directio) {
+      let face = 2;
+      let direc = Directio;
+      if(s = 1) {
+         if (Map1.check(x, y, direc)) {
+            return;
+         }
+      }
+      if(s = 2) {
+         if (Map2.check(x, y, direc)) {
+            return;
+         }
+      }
+      if(s = 3) {
+         if (Map3.check(x, y, direc)) {
+            return;
+         }
+      }
+      if (y < 240) {
+         do erase();
+         let y = y + 16;
+         do draw();
+      }
+      else {
+         if (y = 240) {
+            do erase();
+            let y = 0;
+            do draw();
+         }
+      }
+      return;
+   }
+
+   method void moveLeft(int Directio) {
+      let face = 1;
+      let direc = Directio;
+      if(s = 1) {
+         if (Map1.check(x, y, direc)) {
+            return;
+         }
+      }
+      if(s = 2) {
+         if (Map2.check(x, y, direc)) {
+            return;
+         }
+      }
+      if(s = 3) {
+         if (Map3.check(x, y, direc)) {
+            return;
+         }
+      }
+      if (x = 0) {
+         do erase();
+         let x = 496;
+         do draw();
+      }
+      else {
+         if (x > 0) {
+            do erase();
+            let x = x - 16;
+            do draw();
+         }
+      }
+      return;
+   }
+   
+   method void moveRight(int Directio) {
+      let face = 0;
+      let direc = Directio;
+      if(s = 1) {
+         if (Map1.check(x, y, direc)) {
+            return;
+         }
+      }
+      if(s = 2) {
+         if (Map2.check(x, y, direc)) {
+            return;
+         }
+      }
+      if(s = 3) {
+         if (Map3.check(x, y, direc)) {
+            return;
+         }
+      }
+      if (x = 496){
+         do erase();
+         let x = 0;
+         do draw();
+      }
+      else {
+         if (x < 496) {  
+            do erase();
+            let x = x + 16;
+            do draw();
+         }
+      }
+      return;
+   }
+}

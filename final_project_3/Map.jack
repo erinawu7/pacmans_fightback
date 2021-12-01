@@ -1,0 +1,22 @@
+class Map {
+
+   field int x, y;
+
+   constructor Map new(int Ax, int Ay) {
+      let x = Ax;
+      let y = Ay;
+      do draw();
+      return this;
+   }
+
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+   method void draw() {
+      do Screen.setColor(true);
+      do Screen.drawRectangle(0, 0, 31, 95);
+      return;
+   }
+}

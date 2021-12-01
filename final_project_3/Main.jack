@@ -1,0 +1,35 @@
+class Main {
+    function void main(){
+        var PacManGame game;
+        var int t1, t2, t3;
+        do Start.show();
+        do Start.next();
+        let game = PacManGame.new(1, 0, 0, 0);
+        do game.run();
+        do Map1.end();
+        let t1 = PacManGame.gettime1();
+        let t2 = PacManGame.gettime2();
+        let t3 = PacManGame.gettime3();
+        do game.dispose();
+        do Next1.show();
+        do Next1.next();
+        let game = PacManGame.new(2, t1, t2, t3);
+        do game.run();
+        do Map2.end();
+        let t1 = PacManGame.gettime1();
+        let t2 = PacManGame.gettime2();
+        let t3 = PacManGame.gettime3();
+        do game.dispose();
+        do Next2.show();
+        do Next2.next();
+        let game = PacManGame.new(3, t1, t2, t3);
+        do game.run();
+        do Map3.end();
+        let t1 = PacManGame.gettime1();
+        let t2 = PacManGame.gettime2();
+        let t3 = PacManGame.gettime3();
+        do game.dispose();
+        do Congratulations.show(t1, t2, t3);
+        return;
+    }
+}

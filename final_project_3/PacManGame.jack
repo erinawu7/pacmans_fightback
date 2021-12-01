@@ -1,0 +1,387 @@
+class PacManGame {
+
+    field PacMan pacman;
+    field int direction;
+    field Ghost ghost1, ghost2, ghost3, ghost4, ghost5;
+    field boolean one, two, three, four, five;
+    field int count;
+    field int s;
+    static int time1, time2, time3;
+
+    constructor PacManGame new(int stage, int TIME1, int TIME2, int TIME3){
+      let s = stage;
+      let one = true;
+      let two = true;
+      let three = true;
+      let four = true;
+      let five = true;
+      let count = 5;
+      let time1 = TIME1;
+      let time2 = TIME2;
+      let time3 = TIME3;
+      if (s = 1) {
+        do Map1.draw();
+        let pacman = PacMan.new(32, 32, s);
+        let ghost1 = Ghost.new(208, 160, s);
+        let ghost2 = Ghost.new(336, 32, s);
+        let ghost3 = Ghost.new(128, 112, s);
+        let ghost4 = Ghost.new(448, 128, s);
+        let ghost5 = Ghost.new(96, 208, s);
+      }
+      if (s = 2) {
+        do Map2.draw();
+        let pacman = PacMan.new(32, 32, s);
+        let ghost1 = Ghost.new(96, 112, s);
+        let ghost2 = Ghost.new(176, 192, s);
+        let ghost3 = Ghost.new(288, 176, s);
+        let ghost4 = Ghost.new(448, 128, s);
+        let ghost5 = Ghost.new(256, 48, s);
+      }
+      if (s = 3) {
+        do Map3.draw();
+        let pacman = PacMan.new(32, 32, s);
+        let ghost1 = Ghost.new(48, 128, s);
+        let ghost2 = Ghost.new(224, 192, s);
+        let ghost3 = Ghost.new(288, 80, s);
+        let ghost4 = Ghost.new(384, 160, s);
+        let ghost5 = Ghost.new(448, 32, s);
+      }
+      return this;
+    }
+    
+    method void dispose() {
+      do pacman.dispose();
+      do ghost1.dispose();
+      do ghost2.dispose();
+      do ghost3.dispose();
+      do ghost4.dispose();
+      do ghost5.dispose();
+      do Memory.deAlloc(this);
+      return;
+    }
+
+    method void movePacMan() {
+      if (direction = 1) { do pacman.moveUp(1); }
+      if (direction = 2) { do pacman.moveDown(2); }
+      if (direction = 3) { do pacman.moveLeft(3); }
+      if (direction = 4) { do pacman.moveRight(4); }
+      do Sys.wait(150);  // delays the next movement
+      return;
+    }
+
+    method void moveGhost() {
+      if (direction = 1) { 
+        if (one) { do ghost1.move(1); }
+        if (two) { do ghost2.move(2); }
+        if (three) { do ghost3.move(3); }
+        if (four) { do ghost4.move(2); }
+        if (five) { do ghost5.move(4); }
+      }
+      if (direction = 2) { 
+        if (one) { do ghost1.move(4); }
+        if (two) { do ghost2.move(3); }
+        if (three) { do ghost3.move(3); }
+        if (four) { do ghost4.move(1); }
+        if (five) { do ghost5.move(2); }
+      }
+      if (direction = 3) { 
+        if (one) { do ghost1.move(2); }
+        if (two) { do ghost2.move(1); }
+        if (three) { do ghost3.move(1); }
+        if (four) { do ghost4.move(3); }
+        if (five) { do ghost5.move(3); }
+      }
+      if (direction = 4) { 
+        if (one) { do ghost1.move(4); }
+        if (two) { do ghost2.move(2); }
+        if (three) { do ghost3.move(2); }
+        if (four) { do ghost4.move(4); }
+        if (five) { do ghost5.move(1); }
+      }
+      do Sys.wait(150);
+      return;
+    }
+
+    function int getx (int index) {
+      var int re;
+      let re = 0;
+      if (index = 1) {
+        // do Screen.clearScreen();
+        do ghost1.printx();
+        let re = ghost1.getghostx();
+        // do Screen.clearScreen();
+        return re;
+      }
+      if (index = 2) {
+        let re = ghost2.getghostx();
+        return re;
+      }
+      if (index = 3) {
+        let re = ghost3.getghostx();
+        return re;
+      }
+      if (index = 4) {
+        let re = ghost4.getghostx();
+        return re;
+      }
+      if (index = 5) {
+        let re = ghost5.getghostx();
+        return re;
+      }
+      return re;
+    }
+
+    function int gety (int index) {
+      var int re;
+      let re = 0;
+      if (index = 1) {
+        let re = ghost1.getghosty();
+        return re;
+      }
+      if (index = 2) {
+        let re = ghost2.getghosty();
+        return re;
+      }
+      if (index = 3) {
+        let re = ghost3.getghosty();
+        return re;
+      }
+      if (index = 4) {
+        let re = ghost4.getghosty();
+        return re;
+      }
+      if (index = 5) {
+        let re = ghost5.getghosty();
+        return re;
+      }
+      return re;
+    }
+
+    method boolean checkeat() {
+      var int px, py, gx, gy;
+      let px = pacman.getpacmanx();
+      let py = pacman.getpacmany();
+      if (s = 1) {
+         if (one) {
+            let gx = ghost1.getghostx();
+            let gy = ghost1.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let one = false;
+               }
+            }
+         }
+         if (two) {
+            let gx = ghost2.getghostx();
+            let gy = ghost2.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let two = false;
+               }
+            }
+         }
+         if (three) {
+            let gx = ghost3.getghostx();
+            let gy = ghost3.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let three = false;
+               }
+            }
+         }
+         if (four) {
+            let gx = ghost4.getghostx();
+            let gy = ghost4.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let four = false;
+               }
+            }
+         }
+         if (five) {
+            let gx = ghost5.getghostx();
+            let gy = ghost5.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let five = false;
+               }
+            }
+         }
+      }
+      if (s = 2) {
+         if (one) {
+            let gx = ghost1.getghostx();
+            let gy = ghost1.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let one = false;
+               }
+            }
+         }
+         if (two) {
+            let gx = ghost2.getghostx();
+            let gy = ghost2.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let two = false;
+               }
+            }
+         }
+         if (three) {
+            let gx = ghost3.getghostx();
+            let gy = ghost3.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let three = false;
+               }
+            }
+         }
+         if (four) {
+            let gx = ghost4.getghostx();
+            let gy = ghost4.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let four = false;
+               }
+            }
+         }
+         if (five) {
+            let gx = ghost5.getghostx();
+            let gy = ghost5.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let five = false;
+               }
+            }
+         }
+      }
+      if (s = 3) {
+         if (one) {
+            let gx = ghost1.getghostx();
+            let gy = ghost1.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let one = false;
+               }
+            }
+         }
+         if (two) {
+            let gx = ghost2.getghostx();
+            let gy = ghost2.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let two = false;
+               }
+            }
+         }
+         if (three) {
+            let gx = ghost3.getghostx();
+            let gy = ghost3.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let three = false;
+               }
+            }
+         }
+         if (four) {
+            let gx = ghost4.getghostx();
+            let gy = ghost4.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let four = false;
+               }
+            }
+         }
+         if (five) {
+            let gx = ghost5.getghostx();
+            let gy = ghost5.getghosty();
+            if (px = gx) {
+               if (py = gy) {
+                  let count = count - 1;
+                  let five = false;
+               }
+            }
+         }
+      }
+      if (count = 0) {
+         return true;
+      }
+      return false;
+    }
+
+    method void plustime() {
+      let time1 = time1 + 1;
+      if (time1 = 10000) {
+        let time1 = 0;
+        let time2 = time2 + 1;
+      }
+      if (time2 = 10000) {
+        let time2 = 0;
+        let time3 = time3 + 1;
+      }
+      return;
+    }
+
+    function int gettime1() {
+      return time1;
+    }
+
+    function int gettime2() {
+      return time2;
+    }
+
+    function int gettime3() {
+      return time3;
+    }
+
+    method void run() {
+      var char key;  // the key currently pressed by the user
+      var boolean exit;
+      let exit = false;
+      
+      while (~exit) {
+        do plustime();
+        // waits for a key to be pressed
+        
+        while (key = 0) {
+            let key = Keyboard.keyPressed();
+            do movePacMan();
+            if (checkeat()) { return; }
+            do moveGhost();
+            if (checkeat()) { return; }
+            // do moveGhost();
+        }
+        
+        if (key = 81)  { let exit = true; }     // q key
+        if (key = 131) { let direction = 1; }   // up arrow
+        if (key = 133) { let direction = 2; }   // down arrow
+        if (key = 130) { let direction = 3; }   // left arrow
+        if (key = 132) { let direction = 4; }   // right arrow
+
+        // waits for the key to be released
+        while (~(key = 0)) {
+            let key = Keyboard.keyPressed();
+            do movePacMan();
+            if (checkeat()) { return; }
+            do moveGhost();
+            if (checkeat()) { return; }
+            // do moveGhost();
+        }
+      } // while
+      return;
+    }
+}

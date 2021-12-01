@@ -1,0 +1,160 @@
+class Map3 {
+
+    static Array map3x;
+    static Array map3y;
+   
+    function void draw() {
+        let map3x = Array.new(128);
+        let map3y = Array.new(128);
+        let map3x[0] = 0; let map3y[0] = 0;
+        let map3x[1] = 0; let map3y[1] = 32;
+        let map3x[2] = 0; let map3y[2] = 64;
+        let map3x[3] = 0; let map3y[3] = 96;
+        let map3x[4] = 0; let map3y[4] = 128;
+        let map3x[5] = 0; let map3y[5] = 192;
+        let map3x[6] = 0; let map3y[6] = 224;
+        let map3x[7] = 32; let map3y[7] = 0;
+        let map3x[8] = 32; let map3y[8] = 224;
+        let map3x[9] = 64; let map3y[9] = 0;
+        let map3x[10] = 64; let map3y[10] = 64;
+        let map3x[11] = 64; let map3y[11] = 96;
+        let map3x[12] = 64; let map3y[12] = 128;
+        let map3x[13] = 64; let map3y[13] = 160;
+        let map3x[14] = 64; let map3y[14] = 224;
+        let map3x[15] = 96; let map3y[15] = 0;
+        let map3x[16] = 96; let map3y[16] = 224;
+        let map3x[17] = 128; let map3y[17] = 0;
+        let map3x[18] = 128; let map3y[18] = 32;
+        let map3x[19] = 128; let map3y[19] = 64;
+        let map3x[20] = 128; let map3y[20] = 96;
+        let map3x[21] = 128; let map3y[21] = 160;
+        let map3x[22] = 128; let map3y[22] = 192;
+        let map3x[23] = 128; let map3y[23] = 224;
+        let map3x[24] = 192; let map3y[24] = 0;
+        let map3x[25] = 192; let map3y[25] = 32;
+        let map3x[26] = 192; let map3y[26] = 96;
+        let map3x[27] = 192; let map3y[27] = 128;
+        let map3x[28] = 192; let map3y[28] = 192;
+        let map3x[29] = 192; let map3y[29] = 224;
+        let map3x[30] = 224; let map3y[30] = 0;
+        let map3x[31] = 224; let map3y[31] = 32;
+        let map3x[32] = 224; let map3y[32] = 224;
+        let map3x[33] = 256; let map3y[33] = 0;
+        let map3x[34] = 256; let map3y[34] = 32;
+        let map3x[35] = 256; let map3y[35] = 96;
+        let map3x[36] = 256; let map3y[36] = 128;
+        let map3x[37] = 256; let map3y[37] = 160;
+        let map3x[38] = 256; let map3y[38] = 224;
+        let map3x[39] = 288; let map3y[39] = 0;
+        let map3x[40] = 288; let map3y[40] = 32;
+        let map3x[41] = 288; let map3y[41] = 96;
+        let map3x[42] = 288; let map3y[42] = 224;
+        let map3x[43] = 320; let map3y[43] = 0;
+        let map3x[44] = 320; let map3y[44] = 32;
+        let map3x[45] = 320; let map3y[45] = 160;
+        let map3x[46] = 320; let map3y[46] = 224;
+        let map3x[47] = 352; let map3y[47] = 96;
+        let map3x[48] = 352; let map3y[48] = 128;
+        let map3x[49] = 352; let map3y[49] = 160;
+        let map3x[50] = 384; let map3y[50] = 0;
+        let map3x[51] = 384; let map3y[51] = 64;
+        let map3x[52] = 384; let map3y[52] = 224;
+        let map3x[53] = 416; let map3y[53] = 0;
+        let map3x[54] = 416; let map3y[54] = 64;
+        let map3x[55] = 416; let map3y[55] = 128;
+        let map3x[56] = 416; let map3y[56] = 160;
+        let map3x[57] = 416; let map3y[57] = 224;
+        let map3x[58] = 448; let map3y[58] = 0;
+        let map3x[59] = 448; let map3y[59] = 224;
+        let map3x[60] = 480; let map3y[60] = 0;
+        let map3x[61] = 480; let map3y[61] = 32;
+        let map3x[62] = 480; let map3y[62] = 64;
+        let map3x[63] = 480; let map3y[63] = 96;
+        let map3x[64] = 480; let map3y[64] = 128;
+        let map3x[65] = 480; let map3y[65] = 192;
+        let map3x[66] = 480; let map3y[66] = 224;
+        do Screen.setColor(true);
+        do Screen.drawRectangle(0, 0, 31, 159);
+        do Screen.drawRectangle(0, 192, 31, 255);
+        do Screen.drawRectangle(32, 0, 159, 31);
+        do Screen.drawRectangle(32, 224, 159, 255);
+        do Screen.drawRectangle(64, 64, 95, 191);
+        do Screen.drawRectangle(128, 32, 159, 127);
+        do Screen.drawRectangle(128, 160, 159, 223);
+        do Screen.drawRectangle(192, 0, 351, 63);
+        do Screen.drawRectangle(192, 96, 223, 159);
+        do Screen.drawRectangle(192, 192, 223, 255);
+        do Screen.drawRectangle(224, 224, 351, 255);
+        do Screen.drawRectangle(256, 96, 287, 191);
+        do Screen.drawRectangle(288, 96, 319, 127);
+        do Screen.drawRectangle(320, 160, 383, 191);
+        do Screen.drawRectangle(352, 96, 383, 159);
+        do Screen.drawRectangle(384, 0, 511, 31);
+        do Screen.drawRectangle(384, 64, 447, 95);
+        do Screen.drawRectangle(416, 128, 447, 191);
+        do Screen.drawRectangle(384, 224, 511, 255);
+        do Screen.drawRectangle(480, 32, 511, 159);
+        do Screen.drawRectangle(480, 192, 511, 223);
+        return;
+    }
+
+    function void end() {
+        do Screen.clearScreen();
+        return;
+    }
+
+    function boolean check(int px, int py, int DIR) {
+        var int x;
+        var int y;
+        var int dir;
+        var int i;
+        let i = 0;
+        let x = px;
+        let y = py;
+        let dir = DIR;
+        while (i < 67) {
+            if (dir = 1) {
+                    if ((y - 32) = map3y[i]) {
+                        if (x = map3x[i]) {
+                            return true;
+                        }
+                        if ((x - 16) = map3x[i]) {
+                            return true;
+                        }
+                    }
+            }
+            if (dir = 2) {
+                    if ((y + 16) = map3y[i]) {
+                        if (x = map3x[i]) {
+                            return true;
+                        }
+                        if ((x - 16) = map3x[i]) {
+                            return true;
+                        }
+                    }
+            }
+            if (dir = 3) {
+                if ((x - 32) = map3x[i]) {
+                    if (y = map3y[i]) {
+                        return true;
+                    }
+                    if ((y - 16) = map3y[i]) {
+                        return true;
+                    }
+                }
+            }
+            if (dir = 4) {
+                if ((x + 16) = map3x[i]) {
+                    if (y = map3y[i]) {
+                        return true;
+                    }
+                    if ((y - 16) = map3y[i]) {
+                        return true;
+                    }
+                }
+            }
+            let i = i + 1;
+        }
+        return false;
+    }
+}
