@@ -1,5 +1,4 @@
 class Map3 {
-
     static Array map3x;
     static Array map3y;
    
@@ -73,6 +72,7 @@ class Map3 {
         let map3x[64] = 480; let map3y[64] = 128;
         let map3x[65] = 480; let map3y[65] = 192;
         let map3x[66] = 480; let map3y[66] = 224;
+
         do Screen.setColor(true);
         do Screen.drawRectangle(0, 0, 31, 159);
         do Screen.drawRectangle(0, 192, 31, 255);
@@ -100,6 +100,8 @@ class Map3 {
 
     function void end() {
         do Screen.clearScreen();
+        do map3x.dispose();
+        do map3y.dispose();
         return;
     }
 
@@ -112,6 +114,7 @@ class Map3 {
         let x = px;
         let y = py;
         let dir = DIR;
+
         while (i < 67) {
             if (dir = 1) {
                     if ((y - 32) = map3y[i]) {

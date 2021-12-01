@@ -1,0 +1,378 @@
+class Congratulations{
+    function void show(int T1, int T2, int T3){
+        var Array random1;
+        var int memAddress;
+        var int i;
+        var int score;
+    
+        let score = score + T1;
+        let score = score + T2 * 4;
+        let score = score + T3 * 16;
+
+        do Output.moveCursor(14, 27);
+        do Output.printString("your score is ");
+
+        if (score < 10000) {
+            let score = 10000 - score;
+        }
+        else {
+            let score = 0;
+        }
+
+        do Output.printInt(score);
+        do Screen.drawRectangle(115,86,380,90);
+        do Screen.drawRectangle(110,91,115,96);
+        do Screen.drawRectangle(106,96,110,135);
+        do Screen.drawRectangle(110,135,115,140);
+        do Screen.drawRectangle(115,140,155,144);
+        do Screen.drawRectangle(145,145,155,149);
+        do Screen.drawRectangle(170,145,180,149);
+        do Screen.drawRectangle(145,149,150,154);
+        do Screen.drawRectangle(165,149,175,154);
+        do Screen.drawRectangle(140,154,170,159);
+        do Screen.drawRectangle(135,159,155,164);
+        do Screen.drawRectangle(175,140,380,144);
+        do Screen.drawRectangle(380,91,385,96);
+        do Screen.drawRectangle(385,96,389,135);
+        do Screen.drawRectangle(380,135,385,140);
+
+        // print + on the screen
+        let random1 = Array.new(8);
+        let random1[0] = 393;
+        let random1[1] = 988;
+        let random1[2] = 6300;
+        let random1[3] = 6300;
+        let random1[4] = 4001;
+        let random1[5] = 5200;
+        let random1[6] = 6300;
+        let i = 0;
+        while(i < 7){
+            let memAddress = 16896 + random1[i];
+            do Memory.poke(memAddress + 32, 384);
+            do Memory.poke(memAddress + 64, 384);
+            do Memory.poke(memAddress + 96, 384);
+            do Memory.poke(memAddress + 128, 384);
+            do Memory.poke(memAddress + 160, 384);
+            do Memory.poke(memAddress + 192, 0);
+            do Memory.poke(memAddress + 224, 31806);
+            do Memory.poke(memAddress + 256, 31806);
+            do Memory.poke(memAddress + 288, 0);
+            do Memory.poke(memAddress + 320, 384);
+            do Memory.poke(memAddress + 352, 384);
+            do Memory.poke(memAddress + 384, 384);
+            do Memory.poke(memAddress + 416, 384);
+            do Memory.poke(memAddress + 448, 384);
+            let i = i + 1;
+        }
+
+        // print x on the screen
+        let random1[0] = 196;
+        let random1[1] = 972;
+        let random1[2] = 81;
+        let random1[3] = 6548;
+        let random1[4] = 6020;
+        let i = 0;
+        while(i < 5){
+            let memAddress = 16896 + random1[i];
+            do Memory.poke(memAddress + 128, 2064);
+            do Memory.poke(memAddress + 160, 7224);
+            do Memory.poke(memAddress + 192, 3696);
+            do Memory.poke(memAddress + 224, 1056);
+            do Memory.poke(memAddress + 256, 0);
+            do Memory.poke(memAddress + 288, 1056);
+            do Memory.poke(memAddress + 320, 3696);
+            do Memory.poke(memAddress + 352, 7224);
+            do Memory.poke(memAddress + 384, 2064);
+            let i = i + 1;
+        }
+
+        // print congratulations
+        // print c
+        let memAddress = 16896 + 2984;
+        do Memory.poke(memAddress + 0, 8184);
+        do Memory.poke(memAddress + 32, 8184);
+        do Memory.poke(memAddress + 64, 8184);
+        do Memory.poke(memAddress + 96, 24583);
+        do Memory.poke(memAddress + 128, 24583);
+        do Memory.poke(memAddress + 160, 24583);
+        do Memory.poke(memAddress + 192, 7);
+        do Memory.poke(memAddress + 224, 7);
+        do Memory.poke(memAddress + 256, 7);
+        do Memory.poke(memAddress + 288, 7);
+        do Memory.poke(memAddress + 320, 24583);
+        do Memory.poke(memAddress + 352, 24583);
+        do Memory.poke(memAddress + 384, 24583);
+        do Memory.poke(memAddress + 416, 8184);
+        do Memory.poke(memAddress + 448, 8184);
+        do Memory.poke(memAddress + 480, 8184);
+
+        // print o
+        let memAddress = 16896 + 2985;
+        do Memory.poke(memAddress + 0, 8184);
+        do Memory.poke(memAddress + 32, 8184);
+        do Memory.poke(memAddress + 64, 8184);
+        do Memory.poke(memAddress + 96, 28686);
+        do Memory.poke(memAddress + 128, 28686);
+        do Memory.poke(memAddress + 160, 28686);
+        do Memory.poke(memAddress + 192, 28686);
+        do Memory.poke(memAddress + 224, 28686);
+        do Memory.poke(memAddress + 256, 28686);
+        do Memory.poke(memAddress + 288, 28686);
+        do Memory.poke(memAddress + 320, 28686);
+        do Memory.poke(memAddress + 352, 28686);
+        do Memory.poke(memAddress + 384, 28686);
+        do Memory.poke(memAddress + 416, 8184);
+        do Memory.poke(memAddress + 448, 8184);
+        do Memory.poke(memAddress + 480, 8184);
+
+        // print n
+        let memAddress = 16896 + 2986;
+        do Memory.poke(memAddress + 0, 24590);
+        do Memory.poke(memAddress + 32, 24606);
+        do Memory.poke(memAddress + 64, 24606);
+        do Memory.poke(memAddress + 96, 24606);
+        do Memory.poke(memAddress + 128, 24686);
+        do Memory.poke(memAddress + 160, 24686);
+        do Memory.poke(memAddress + 192, 24686);
+        do Memory.poke(memAddress + 224, 24974);
+        do Memory.poke(memAddress + 256, 24974);
+        do Memory.poke(memAddress + 288, 24974);
+        do Memory.poke(memAddress + 320, 26126);
+        do Memory.poke(memAddress + 352, 26126);
+        do Memory.poke(memAddress + 384, 26126);
+        do Memory.poke(memAddress + 416, 30734);
+        do Memory.poke(memAddress + 448, 30734);
+        do Memory.poke(memAddress + 480, 24590);
+ 
+        // print g
+        let memAddress = 16896 + 2987;
+        do Memory.poke(memAddress + 0, 32760);
+        do Memory.poke(memAddress + 32, 32760);
+        do Memory.poke(memAddress + 64, 32760);
+        do Memory.poke(memAddress + 96, 14);
+        do Memory.poke(memAddress + 128, 14);
+        do Memory.poke(memAddress + 160, 14);
+        do Memory.poke(memAddress + 192, 14);
+        do Memory.poke(memAddress + 224, 31758);
+        do Memory.poke(memAddress + 256, 31758);
+        do Memory.poke(memAddress + 288, 31758);
+        do Memory.poke(memAddress + 320, 24590);
+        do Memory.poke(memAddress + 352, 24590);
+        do Memory.poke(memAddress + 384, 24590);
+        do Memory.poke(memAddress + 416, 32766);
+        do Memory.poke(memAddress + 448, 32766);
+        do Memory.poke(memAddress + 480, 32766);
+
+        // print r
+        let memAddress = 16896 + 2988;
+        do Memory.poke(memAddress + 0, 4094);
+        do Memory.poke(memAddress + 32, 4094);
+        do Memory.poke(memAddress + 64, 4094);
+        do Memory.poke(memAddress + 96, 28686);
+        do Memory.poke(memAddress + 128, 28686);
+        do Memory.poke(memAddress + 160, 28686);
+        do Memory.poke(memAddress + 192, 28686);
+        do Memory.poke(memAddress + 224, 32766);
+        do Memory.poke(memAddress + 256, 32766);
+        do Memory.poke(memAddress + 288, 32766);
+        do Memory.poke(memAddress + 320, 3598);
+        do Memory.poke(memAddress + 352, 3598);
+        do Memory.poke(memAddress + 384, 3598);
+        do Memory.poke(memAddress + 416, 28686);
+        do Memory.poke(memAddress + 448, 28686);
+        do Memory.poke(memAddress + 480, 28686);
+        
+
+        // print a
+        let memAddress = 16896 + 2989;
+        do Memory.poke(memAddress + 0, 4080);
+        do Memory.poke(memAddress + 32, 4080);
+        do Memory.poke(memAddress + 64, 4080);
+        do Memory.poke(memAddress + 96, 28686);
+        do Memory.poke(memAddress + 128, 28686);
+        do Memory.poke(memAddress + 160, 28686);
+        do Memory.poke(memAddress + 192, 28686);
+        do Memory.poke(memAddress + 224, 32766);
+        do Memory.poke(memAddress + 256, 32766);
+        do Memory.poke(memAddress + 288, 32766);
+        do Memory.poke(memAddress + 320, 28686);
+        do Memory.poke(memAddress + 352, 28686);
+        do Memory.poke(memAddress + 384, 28686);
+        do Memory.poke(memAddress + 416, 28686);
+        do Memory.poke(memAddress + 448, 28686);
+        do Memory.poke(memAddress + 480, 28686);
+
+        // print t
+        let memAddress = 16896 + 2990;
+        do Memory.poke(memAddress + 0, 32766);
+        do Memory.poke(memAddress + 32, 32766);
+        do Memory.poke(memAddress + 64, 32766);
+        do Memory.poke(memAddress + 96, 896);
+        do Memory.poke(memAddress + 128, 896);
+        do Memory.poke(memAddress + 160, 896);
+        do Memory.poke(memAddress + 192, 896);
+        do Memory.poke(memAddress + 224, 896);
+        do Memory.poke(memAddress + 256, 896);
+        do Memory.poke(memAddress + 288, 896);
+        do Memory.poke(memAddress + 320, 896);
+        do Memory.poke(memAddress + 352, 896);
+        do Memory.poke(memAddress + 384, 896);
+        do Memory.poke(memAddress + 416, 896);
+        do Memory.poke(memAddress + 448, 896);
+        do Memory.poke(memAddress + 480, 896);
+
+        // print u
+        let memAddress = 16896 + 2991;
+        do Memory.poke(memAddress + 0, 28686);
+        do Memory.poke(memAddress + 32, 28686);
+        do Memory.poke(memAddress + 64, 28686);
+        do Memory.poke(memAddress + 96, 28686);
+        do Memory.poke(memAddress + 128, 28686);
+        do Memory.poke(memAddress + 160, 28686);
+        do Memory.poke(memAddress + 192, 28686);
+        do Memory.poke(memAddress + 224, 28686);
+        do Memory.poke(memAddress + 256, 28686);
+        do Memory.poke(memAddress + 288, 28686);
+        do Memory.poke(memAddress + 320, 28686);
+        do Memory.poke(memAddress + 352, 28686);
+        do Memory.poke(memAddress + 384, 28686);
+        do Memory.poke(memAddress + 416, 4080);
+        do Memory.poke(memAddress + 448, 4080);
+        do Memory.poke(memAddress + 480, 4080);
+
+        // print l
+        let memAddress = 16896 + 2992;
+        do Memory.poke(memAddress + 0, 14);
+        do Memory.poke(memAddress + 32, 14);
+        do Memory.poke(memAddress + 64, 14);
+        do Memory.poke(memAddress + 96, 14);
+        do Memory.poke(memAddress + 128, 14);
+        do Memory.poke(memAddress + 160, 14);
+        do Memory.poke(memAddress + 192, 14);
+        do Memory.poke(memAddress + 224, 14);
+        do Memory.poke(memAddress + 256, 14);
+        do Memory.poke(memAddress + 288, 14);
+        do Memory.poke(memAddress + 320, 14);
+        do Memory.poke(memAddress + 352, 14);
+        do Memory.poke(memAddress + 384, 14);
+        do Memory.poke(memAddress + 416, 32766);
+        do Memory.poke(memAddress + 448, 32766);
+        do Memory.poke(memAddress + 480, 32766);
+
+        // print a
+        let memAddress = 16896 + 2993;
+        do Memory.poke(memAddress + 0, 4080);
+        do Memory.poke(memAddress + 32, 4080);
+        do Memory.poke(memAddress + 64, 4080);
+        do Memory.poke(memAddress + 96, 28686);
+        do Memory.poke(memAddress + 128, 28686);
+        do Memory.poke(memAddress + 160, 28686);
+        do Memory.poke(memAddress + 192, 28686);
+        do Memory.poke(memAddress + 224, 32766);
+        do Memory.poke(memAddress + 256, 32766);
+        do Memory.poke(memAddress + 288, 32766);
+        do Memory.poke(memAddress + 320, 28686);
+        do Memory.poke(memAddress + 352, 28686);
+        do Memory.poke(memAddress + 384, 28686);
+        do Memory.poke(memAddress + 416, 28686);
+        do Memory.poke(memAddress + 448, 28686);
+        do Memory.poke(memAddress + 480, 28686);
+
+        // print t
+        let memAddress = 16896 + 2994;
+        do Memory.poke(memAddress + 0, 32766);
+        do Memory.poke(memAddress + 32, 32766);
+        do Memory.poke(memAddress + 64, 32766);
+        do Memory.poke(memAddress + 96, 896);
+        do Memory.poke(memAddress + 128, 896);
+        do Memory.poke(memAddress + 160, 896);
+        do Memory.poke(memAddress + 192, 896);
+        do Memory.poke(memAddress + 224, 896);
+        do Memory.poke(memAddress + 256, 896);
+        do Memory.poke(memAddress + 288, 896);
+        do Memory.poke(memAddress + 320, 896);
+        do Memory.poke(memAddress + 352, 896);
+        do Memory.poke(memAddress + 384, 896);
+        do Memory.poke(memAddress + 416, 896);
+        do Memory.poke(memAddress + 448, 896);
+        do Memory.poke(memAddress + 480, 896);
+
+        // print i
+        let memAddress = 16896 + 2995;
+        do Memory.poke(memAddress + 0, 896);
+        do Memory.poke(memAddress + 32, 896);
+        do Memory.poke(memAddress + 64, 896);
+        do Memory.poke(memAddress + 96, 896);
+        do Memory.poke(memAddress + 128, 896);
+        do Memory.poke(memAddress + 160, 896);
+        do Memory.poke(memAddress + 192, 896);
+        do Memory.poke(memAddress + 224, 896);
+        do Memory.poke(memAddress + 256, 896);
+        do Memory.poke(memAddress + 288, 896);
+        do Memory.poke(memAddress + 320, 896);
+        do Memory.poke(memAddress + 352, 896);
+        do Memory.poke(memAddress + 384, 896);
+        do Memory.poke(memAddress + 416, 896);
+        do Memory.poke(memAddress + 448, 896);
+        do Memory.poke(memAddress + 480, 896);
+
+        // print o
+        let memAddress = 16896 + 2996;
+        do Memory.poke(memAddress + 0, 8184);
+        do Memory.poke(memAddress + 32, 8184);
+        do Memory.poke(memAddress + 64, 8184);
+        do Memory.poke(memAddress + 96, 28686);
+        do Memory.poke(memAddress + 128, 28686);
+        do Memory.poke(memAddress + 160, 28686);
+        do Memory.poke(memAddress + 192, 28686);
+        do Memory.poke(memAddress + 224, 28686);
+        do Memory.poke(memAddress + 256, 28686);
+        do Memory.poke(memAddress + 288, 28686);
+        do Memory.poke(memAddress + 320, 28686);
+        do Memory.poke(memAddress + 352, 28686);
+        do Memory.poke(memAddress + 384, 28686);
+        do Memory.poke(memAddress + 416, 8184);
+        do Memory.poke(memAddress + 448, 8184);
+        do Memory.poke(memAddress + 480, 8184);
+
+        // print n
+        let memAddress = 16896 + 2997;
+        do Memory.poke(memAddress + 0, 24590);
+        do Memory.poke(memAddress + 32, 24606);
+        do Memory.poke(memAddress + 64, 24606);
+        do Memory.poke(memAddress + 96, 24606);
+        do Memory.poke(memAddress + 128, 24686);
+        do Memory.poke(memAddress + 160, 24686);
+        do Memory.poke(memAddress + 192, 24686);
+        do Memory.poke(memAddress + 224, 24974);
+        do Memory.poke(memAddress + 256, 24974);
+        do Memory.poke(memAddress + 288, 24974);
+        do Memory.poke(memAddress + 320, 26126);
+        do Memory.poke(memAddress + 352, 26126);
+        do Memory.poke(memAddress + 384, 26126);
+        do Memory.poke(memAddress + 416, 30734);
+        do Memory.poke(memAddress + 448, 30734);
+        do Memory.poke(memAddress + 480, 24590);
+
+        // print s
+        let memAddress = 16896 + 2998;
+        do Memory.poke(memAddress + 0, 32752);
+        do Memory.poke(memAddress + 32, 32752);
+        do Memory.poke(memAddress + 64, 32752);
+        do Memory.poke(memAddress + 96, 14);
+        do Memory.poke(memAddress + 128, 14);
+        do Memory.poke(memAddress + 160, 14);
+        do Memory.poke(memAddress + 192, 14);
+        do Memory.poke(memAddress + 224, 4080);
+        do Memory.poke(memAddress + 256, 4080);
+        do Memory.poke(memAddress + 288, 32752);
+        do Memory.poke(memAddress + 320, 28672);
+        do Memory.poke(memAddress + 352, 28672);
+        do Memory.poke(memAddress + 384, 28672);
+        do Memory.poke(memAddress + 416, 4094);
+        do Memory.poke(memAddress + 448, 4094);
+        do Memory.poke(memAddress + 480, 4094);
+
+        return;
+    }
+}

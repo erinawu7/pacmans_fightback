@@ -1,5 +1,4 @@
 class PacMan {
-
    field int x, y;
    field int address;
    field int direc;
@@ -33,11 +32,13 @@ class PacMan {
 
    method void draw() {
       do Screen.setColor(true);
+
       if(face = 0){
          do Screen.drawLine(x+6,y+0,x+11,y+0);
          do Screen.drawLine(x+4,y+1,x+13,y+1);
          do Screen.drawLine(x+2,y+2,x+14,y+2);
-         do Screen.drawLine(x+1,y+3,x+7,y+3);do Screen.drawLine(x+10,y+3,x+15,y+3);
+         do Screen.drawLine(x+1,y+3,x+7,y+3);
+         do Screen.drawLine(x+10,y+3,x+15,y+3);
          do Screen.drawLine(x+1,y+4,x+14,y+4);
          do Screen.drawLine(x+0,y+5,x+12,y+5);
          do Screen.drawLine(x+0,y+6,x+10,y+6);
@@ -50,11 +51,13 @@ class PacMan {
          do Screen.drawLine(x+3,y+13,x+12,y+13);
          do Screen.drawLine(x+5,y+14,x+11,y+14);
       }
+
       if(face = 1){
          do Screen.drawLine(x+4,y+0,x+9,y+0);
          do Screen.drawLine(x+2,y+1,x+11,y+1);
          do Screen.drawLine(x+1,y+2,x+13,y+2);
-         do Screen.drawLine(x+0,y+3,x+6,y+3);do Screen.drawLine(x+9,y+3,x+14,y+3);
+         do Screen.drawLine(x+0,y+3,x+6,y+3);
+         do Screen.drawLine(x+9,y+3,x+14,y+3);
          do Screen.drawLine(x+1,y+4,x+14,y+4);
          do Screen.drawLine(x+3,y+5,x+15,y+5);
          do Screen.drawLine(x+5,y+6,x+15,y+6);
@@ -67,6 +70,7 @@ class PacMan {
          do Screen.drawLine(x+3,y+13,x+12,y+13);
          do Screen.drawLine(x+4,y+14,x+10,y+14);
       }
+
       if(face = 2){
          do Screen.drawLine(x+5,y+0,x+9,y+0);
          do Screen.drawLine(x+3,y+1,x+11,y+1);
@@ -77,23 +81,41 @@ class PacMan {
          do Screen.drawLine(x+0,y+6,x+14,y+6);
          do Screen.drawLine(x+0,y+7,x+14,y+7);
          do Screen.drawLine(x+0,y+8,x+14,y+8);
-         do Screen.drawLine(x+0,y+9,x+2,y+9);do Screen.drawLine(x+4,y+9,x+14,y+9);
-         do Screen.drawLine(x+0,y+10,x+2,y+10);do Screen.drawLine(x+4,y+10,x+7,y+10);do Screen.drawLine(x+9,y+10,x+14,y+10);
-         do Screen.drawLine(x+0,y+11,x+6,y+11);do Screen.drawLine(x+9,y+11,x+14,y+11);
-         do Screen.drawLine(x+1,y+12,x+5,y+12);do Screen.drawLine(x+10,y+12,x+13,y+12);
-         do Screen.drawLine(x+1,y+13,x+4,y+13);do Screen.drawLine(x+10,y+13,x+12,y+13);
-         do Screen.drawLine(x+2,y+14,x+4,y+14);do Screen.drawLine(x+11,y+14,x+12,y+14);
-         do Screen.drawLine(x+3,y+15,x+3,y+15);do Screen.drawLine(x+11,y+15,x+11,y+15);
+         do Screen.drawLine(x+0,y+9,x+2,y+9);
+         do Screen.drawLine(x+4,y+9,x+14,y+9);
+         do Screen.drawLine(x+0,y+10,x+2,y+10);
+         do Screen.drawLine(x+4,y+10,x+7,y+10);
+         do Screen.drawLine(x+9,y+10,x+14,y+10);
+         do Screen.drawLine(x+0,y+11,x+6,y+11);
+         do Screen.drawLine(x+9,y+11,x+14,y+11);
+         do Screen.drawLine(x+1,y+12,x+5,y+12);
+         do Screen.drawLine(x+10,y+12,x+13,y+12);
+         do Screen.drawLine(x+1,y+13,x+4,y+13);
+         do Screen.drawLine(x+10,y+13,x+12,y+13);
+         do Screen.drawLine(x+2,y+14,x+4,y+14);
+         do Screen.drawLine(x+11,y+14,x+12,y+14);
+         do Screen.drawLine(x+3,y+15,x+3,y+15);
+         do Screen.drawLine(x+11,y+15,x+11,y+15);
       }
+
       if(face = 3){
-         do Screen.drawLine(x+4,y+0,x+4,y+0);do Screen.drawLine(x+12,y+0,x+12,y+0);
-         do Screen.drawLine(x+3,y+1,x+4,y+1);do Screen.drawLine(x+11,y+1,x+13,y+1);
-         do Screen.drawLine(x+3,y+2,x+5,y+2);do Screen.drawLine(x+11,y+2,x+14,y+2);
-         do Screen.drawLine(x+2,y+3,x+5,y+3);do Screen.drawLine(x+10,y+3,x+14,y+3);
-         do Screen.drawLine(x+1,y+4,x+5,y+4);do Screen.drawLine(x+10,y+4,x+15,y+4);
-         do Screen.drawLine(x+1,y+5,x+6,y+5);do Screen.drawLine(x+9,y+5,x+15,y+5);
-         do Screen.drawLine(x+0,y+6,x+6,y+6);do Screen.drawLine(x+8,y+6,x+11,y+6);do Screen.drawLine(x+13,y+6,x+15,y+6);
-         do Screen.drawLine(x+0,y+7,x+11,y+7);do Screen.drawLine(x+13,y+7,x+15,y+7);
+         do Screen.drawLine(x+4,y+0,x+4,y+0);
+         do Screen.drawLine(x+12,y+0,x+12,y+0);
+         do Screen.drawLine(x+3,y+1,x+4,y+1);
+         do Screen.drawLine(x+11,y+1,x+13,y+1);
+         do Screen.drawLine(x+3,y+2,x+5,y+2);
+         do Screen.drawLine(x+11,y+2,x+14,y+2);
+         do Screen.drawLine(x+2,y+3,x+5,y+3);
+         do Screen.drawLine(x+10,y+3,x+14,y+3);
+         do Screen.drawLine(x+1,y+4,x+5,y+4);
+         do Screen.drawLine(x+10,y+4,x+15,y+4);
+         do Screen.drawLine(x+1,y+5,x+6,y+5);
+         do Screen.drawLine(x+9,y+5,x+15,y+5);
+         do Screen.drawLine(x+0,y+6,x+6,y+6);
+         do Screen.drawLine(x+8,y+6,x+11,y+6);
+         do Screen.drawLine(x+13,y+6,x+15,y+6);
+         do Screen.drawLine(x+0,y+7,x+11,y+7);
+         do Screen.drawLine(x+13,y+7,x+15,y+7);
          do Screen.drawLine(x+0,y+8,x+15,y+8);
          do Screen.drawLine(x+0,y+9,x+15,y+9);
          do Screen.drawLine(x+0,y+10,x+14,y+10);

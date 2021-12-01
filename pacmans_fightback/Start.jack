@@ -1,13 +1,14 @@
 class Start {
-
     function void show() {
         var int i, j, k;
         var char key;
         var int memAddress;
         let key = Keyboard.keyPressed();
+
         do Output.moveCursor(9, 22);
         do Output.printString("pacman's fightback");
         do Output.moveCursor(13, 21);
+
         while (~(key = 128)) {
             let memAddress = 16384+2997;
             do Memory.poke(memAddress+0, 768);
@@ -26,6 +27,7 @@ class Start {
             do Memory.poke(memAddress+416, 2064);
             do Memory.poke(memAddress+448, 2016);
             do Memory.poke(memAddress+480, 0);
+
             let memAddress = memAddress-12;
             do Memory.poke(memAddress+0, 768);
             do Memory.poke(memAddress+32, 8836);
@@ -43,14 +45,17 @@ class Start {
             do Memory.poke(memAddress+416, 2064);
             do Memory.poke(memAddress+448, 2016);
             do Memory.poke(memAddress+480, 0);
+
             do Output.printString("press enter to start");
             do Sys.wait(300);
+
             let key = Keyboard.keyPressed();
             let j = 0;
             while (j < 20) {
                 do Output.backSpace();
                 let j = j + 1;
             }
+
             do Screen.setColor(false);
             do Screen.drawRectangle(144, 91, 144 + 15, 91 + 18);
             do Screen.drawRectangle(336, 91, 336 + 15, 91 + 18);
